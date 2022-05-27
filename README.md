@@ -30,7 +30,7 @@ The following data was collected on my laptop which has a 2.6 GHz Quad-Core Inte
 | 2<sup>10</sup> | .00049 | .00025 | .00021 |
 | 2<sup>12</sup> | .0031 | .0028 | .0027 |
 | 2<sup>14</sup> | .049 | .051 | .055 |
-| 2<sup>16</sup> | 0.71 | 0.71 |  |
+| 2<sup>16</sup> | 0.71 | 0.71 | 0.64 |
 | 2<sup>18</sup> |  |  |  |
 
 ## Citing
