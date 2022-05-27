@@ -12,7 +12,7 @@ There are two available functions:
   * ```findmaxcardinalitybipartitematching``` returns a maximum cardinality matching.
   * ```findgreedybipartitematching``` returns a matching that is not necesarrily optimal, but may be slightly faster than ```findmaxcardinalitybipartitematching```.
  
-Both functions take in a 2-d BitArray (```BitArray{2}```) representing the adjacency matrix for a bipartite graph. In other words, the value at row i column j of the BitArray should be 1 if and only if node i is connected to node j in your bipartite graph. The BitArray does not need to be square, for example you could match a set of 100 to a set of 10 using a 100x10 BitArray. However, the algorithm may perform at drastically different speeds when solving a 100x10 BitArray compared to a 10x100 BitArray. For optimal performance, initiate your BitArray with less columns than rows when the BitArray is not sqaure.
+Both functions take in a 2-d BitArray (```BitArray{2}```) representing the adjacency matrix for a bipartite graph. In other words, the value at row i column j of the BitArray should be 1 if and only if node i is connected to node j in your bipartite graph. The BitArray does not need to be square, for example you could match a set of 100 to a set of 10 using a 100x10 BitArray. However, the algorithm may perform at drastically different speeds when solving a 100x10 BitArray compared to a 10x100 BitArray. For optimal performance, initiate your BitArray with fewer columns than rows when the BitArray is not sqaure.
  
  Both functions return 2 values:
   * A ```Dict{Int, Int}``` containing a matching of rows to columns. In other words, the key value pair ```(i => j)``` means that edge ```(i,j)``` was used in the matching. 
