@@ -23,7 +23,7 @@ Both functions take in a 2-d BitArray (```BitArray{2}```) representing the adjac
 The algorithm used for this package is a breadth-first search for [augmenting paths](https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm#Augmenting_paths), which is shown to be fast in practice in the paper *Sequential and Parallel Experimental Results with Bipartite Matching Algorithms* by *Joao C. Setubal*. The algorithm is implemented nearly as described in the aforementioned paper, but it has one added procedure. While, [Hopcroft-Karp](https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm#Algorithm) is known to be slower in practice than a breadth first search, the obervations used to construct the Hopcroft-Karp algorithm can be used to speed up a breadth-first search by running different sub-routines depending on which part of the augmenting path the breadth-first search is on. I have not found any mention of this in existing literature, but I would be surprised if it was an original observation. 
 
 ## Performance
-The following data was collected on my laptop which has a 2.6 GHz Quad-Core Intel Core i7 processor. For each listed time, 100 graphs were created randomly, and the average solve time was reported. The values in the *number of nodes* column are the number of total nodes in the graph being solved. The density is the percent of maximum possible edges that were incuded in the graph. Solve times are reported in seconds for each category.
+The following data was collected on my laptop which has a 2.6 GHz Quad-Core Intel Core i7 processor. For each listed time, 100 graphs were created randomly (10 for the 2<sup>18</sup> node graphs), and the average solve time was reported. The values in the *number of nodes* column are the number of total nodes in the graph being solved. The density is the percent of maximum possible edges that were incuded in the graph. Solve times are reported in seconds for each category.
 
 | Number of Nodes  | Density = 10% |  Density = 50% | Density = 90% |
 | :-------------: | :-------------: | :-------------: | :-------------: |
@@ -32,7 +32,6 @@ The following data was collected on my laptop which has a 2.6 GHz Quad-Core Inte
 | 2<sup>14</sup> | .049 | .051 | .055 |
 | 2<sup>16</sup> | 0.71 |  |  |
 | 2<sup>18</sup> |  |  |  |
-| 2<sup>20</sup> |  |  |  |
 
 ## Citing
 I encourage you to cite this work if you use this library.
