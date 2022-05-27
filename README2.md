@@ -1,0 +1,30 @@
+# BipartiteMatching.jl
+There are many algorithms in existing Julia packages capable of finding maximum cardinality matches in bipartite graphs. However, the existing algorithms are very general, and use network flow algorithms or linear programming. For most small instances of bipartite matching those algorithms will work fine, but they do not scale nearly as well on large problems as algorithms optimized for bipartite graphs. This package provides a method of finding max cardinality matches on large bipartite graphs. 
+
+## Installation
+Installation is straightforward: enter Pkg mode by hitting `]`, and then
+```julia-repl
+(v1.0) pkg> add BipartiteMatching
+```
+
+## How to use this Package
+There are two available functions:
+  * ```findmaxcardinalitybipartitematching``` returns a maximum cardinality matching.
+  * ```findgreedybipartitematching``` returns a matching that is not necesarrily optimal, but may be slightly faster than ```findmaxcardinalitybipartitematching```.
+ 
+Both functions take in a 2-d BitArray (```BitArray{2}```) representing the adjacency matrix for a bipartite graph. In other words, the value at row i column j of the BitArray should be 1 if and only if node i is connected to node j in your bipartite graph. The BitArray does not need to be square, for example you could match a set of 100 to a set of 10 using a 100x10 BitArray. However, the algorithm may perform at drastically different speeds for a 100x10 BitArray than a 10x100 BitArray. For optimal performance, initiate your BitArray with less columns than rows when the BitArray is not sqaure.
+ 
+ Both functions return 2 values:
+  * A ```Dict{Int, Int}``` containing a matching of rows to columns. In other words, the key value pair ```(i => j)``` means that edge ```(i,j)``` was used in the matching. 
+  * A ```BitVector``` containing the matched column indices. In other words, if the ```Dict{Int, Int}``` contains the key value pair ```(i => j)```, then position j of the ```BitVector``` will be equal to 1 (and 0 otherwise). 
+
+
+## The Algorithm 
+The algorithm used for this package is a breadth-first search for [augmenting paths](https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm#Augmenting_paths), which is shown to be fast in practice in the paper *Sequential and Parallel Experimental Results with Bipartite Matching Algorithms* by *Joao C. Setubal*. The algorithm is implemented nearly as described in the aforementioned paper, but it has one added procedure. While, [Hopcroft-Karp](https://en.wikipedia.org/wiki/Hopcroft%E2%80%93Karp_algorithm#Algorithm) is known to be slower in practice than a breadth first search, the obervations used to construct the Hopcroft-Karp algorithm can be used to speed up a breadth-first search by running different sub-routines depending on which part of the augmenting path the breadth-first search is on. I have not found any mention of this in existing literature, but I would be surprised if it was an original observation. 
+
+## Performance
+
+## Citing
+I encourage you to cite this work if you use this library.
+
+Starring the repository on GitHub is also appreciated.
