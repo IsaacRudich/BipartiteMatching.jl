@@ -1,5 +1,5 @@
 # BipartiteMatching.jl
-There are many algorithms in existing Julia packages capable of finding maximum cardinality matches in bipartite graphs. However, the existing algorithms are very general, and use network flow algorithms or linear programming. For most small instances of bipartite matching those algorithms will work fine, but they do not scale nearly as well on large problems as algorithms optimized for bipartite graphs. This package provides a method of finding max cardinality matches that performs well on both very small and very large bipartite graphs.
+There are many algorithms in other Julia packages capable of finding maximum cardinality matches in bipartite graphs. However, those algorithms are very general, and mostly use linear programming or generic flow algorithms. For most small instances of bipartite matching those algorithms will work fine, but they do not scale nearly as well on large problems as algorithms optimized for bipartite graphs. This package provides a method of finding max cardinality matches that performs well on both very small and very large bipartite graphs.
 
 ## Installation
 Installation is straightforward: enter Pkg mode by hitting `]`, and then
