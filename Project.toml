@@ -1,10 +1,10 @@
 name = "BipartiteMatching"
 uuid = "79040ab4-24c8-4c92-950c-d48b5991a0f6"
 authors = ["Isaac Rudich <isaac.rudich@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [compat]
-julia = "1.6.1"
+julia = "1.1.1"
