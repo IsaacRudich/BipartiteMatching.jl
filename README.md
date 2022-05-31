@@ -4,7 +4,7 @@ There are many algorithms in other Julia packages capable of finding maximum car
 ## Installation
 Installation is straightforward: enter Pkg mode by hitting `]`, and then
 ```julia-repl
-(v1.0) pkg> add BipartiteMatching
+(v1.1) pkg> add BipartiteMatching
 ```
 
 ## How to use this Package
