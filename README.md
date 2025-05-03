@@ -37,3 +37,8 @@ The following data was collected on my laptop which has a 2.6 GHz Quad-Core Inte
 I encourage you to cite this work if you use this library.
 
 Starring the repository on GitHub is also appreciated.
+
+[Zenodo](https://zenodo.org/records/15332606)
+
+DOI: https://doi.org/10.5281/zenodo.15332605
+
